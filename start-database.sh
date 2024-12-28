@@ -16,7 +16,7 @@ if ! [ -x "$(command -v docker)" ]; then
   exit 1
 fi
 
-if ! docker info > /dev/null 2>&1; then
+if ! docker info >/dev/null 2>&1; then
   echo "Docker daemon is not running. Please start Docker and try again."
   exit 1
 fi
@@ -57,4 +57,4 @@ docker run -d \
   -e POSTGRES_PASSWORD="$DB_PASSWORD" \
   -e POSTGRES_DB=chat-with-your-documentation \
   -p "$DB_PORT":5432 \
-  docker.io/postgres && echo "Database container '$DB_CONTAINER_NAME' was successfully created"
+  pgvector/pgvector:pg16 && echo "Database container '$DB_CONTAINER_NAME' was successfully created"

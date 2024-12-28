@@ -80,7 +80,7 @@ const ChatInterface = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+              onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
               placeholder="Ask a question about the documentation..."
               className="flex-1 rounded-full bg-white/5 px-4 py-2 text-white"
             />
